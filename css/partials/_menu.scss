@@ -1,9 +1,9 @@
-header{
+header {
     width: 100%;
     padding-top: 16px;
 }
 
-.navbar{
+.navbar {
     max-width: 1440px;
     margin: 0 auto;
 
@@ -12,23 +12,34 @@ header{
     align-items: center;
 }
 
-.nav-menu{
+.nav-menu {
     display: flex;
     justify-content: flex-start;
     align-items: center;
 }
 
-.nav-list{
+.nav-list {
     list-style: none;
     display: flex;
 
-    li{
+    li {
         margin-left: 24px;
     }
 
+    @include responsive() {
+        display: none;
+    }
 }
 
-.nav-link{
+.logo {
+    max-width: 88px;
+}
+
+.w-auto {
+    width: auto;
+}
+
+.nav-link {
     display: inline-block;
 
     font-size: 14px;
@@ -43,7 +54,7 @@ header{
 
     position: relative;
 
-    &::after{
+    &::after {
         content: '';
         display: block;
         position: absolute;
@@ -54,36 +65,58 @@ header{
         height: 0px;
         transition: .7s ease;
 
-        background: linear-gradient(180deg, rgba(233,29,34,0) 0%, #E91D22 100%);
+        background: linear-gradient(180deg, rgba(233, 29, 34, 0) 0%, #E91D22 100%);
     }
 
-    &:hover{
+    &:hover {
         color: $white-light;
 
-        &::after{
+        &::after {
             height: 40px;
         }
     }
 }
 
-.nav-social{
+.bx{
+    width: 40px;
+    height: 40px;
+
+    background-color: white;
+
+    border-radius: 8px;
+
+    display: none;
+
+    @include responsive(){
+        display: block;
+    }
+}
+
+.nav-social {
     display: flex;
 
-    svg{
+    svg {
         cursor: pointer;
 
         margin-left: 16px;
         width: 24px;
 
-        path, circle{
+        path,
+        circle {
             transition: .7s ease;
         }
 
-        &:hover{
-            path, circle{
+        &:hover {
+
+            path,
+            circle {
                 fill: $red-light;
-                transform: translate3d(0,- 3px, 0);
+                transform: translate3d(0, - 3px, 0);
             }
         }
+    }
+
+    @include responsive() {
+        display: none;
     }
 }
